@@ -1,0 +1,16 @@
+Định nghĩa module:
+     -Một module là một tập hợp, một gói, một packet, chứa data - ví dụ các biến lưu giữ state,..., 
+     các hàm (function hoặc method) lấy dữ liệu, thao tác, thay đổi giá trị, các biến state đó nhằm phục vụ một chức năng nhất định.
+
+Import: Cho phép import các functionality từ các module khác. 
+Export: Khai báo những variables hoặc function cho phép những module khác truy cập và sử dụng
+
+Ex :
+const name = 'value';
+export { name as newName };
+
+import { newName } from '/modules/my-module.js';
+console.log(newName); // 'value'
+// Tên gốc (name) không còn truy cập được
+console.log(name); // undefined
+  

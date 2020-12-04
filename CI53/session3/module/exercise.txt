@@ -1,0 +1,24 @@
+Cho 1 tập n ng gồm nam và nữ. Mỗi ng có ít nhất 1 mối quan hệ bạn bè với người khác. Cho thông tin 1 ng x cho trước.
+1.Hãy viết chuơng trình tìm tất cả các ng bạn của ng đó
+2.Hãy viết chuơng trình tìm tất cả các ng bạn nam của ng đó
+3.Hãy viết chuơng trình tìm tất cả các ng bạn nữ của ng đó
+
+Gợi ý:
+   Person:
+       name
+       age
+
+   Boy:
+       handsome: thang 10
+
+   Girl:
+       beauty: thang 10
+
+   Group: 
+       people: []
+       relationship: []
+
+
+   Relationship:
+       a
+       b            

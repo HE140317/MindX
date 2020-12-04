@@ -1,0 +1,57 @@
+/* 
+    selector dể chọn thằng được style
+    # cho id
+    . cho class
+*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#troll {
+    width: 700px;
+    margin: auto;
+}
+
+#question {
+    background-color: cornflowerblue;
+    color: darkblue;
+    height: 300px;
+    font-size: 60px;
+    border-radius: 10px;
+    /*cho content vao giua*/
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    /*can theo chieu flex-direction*/
+    align-items: center;
+    /*can theo chieu vuong goc vs flex-direction*/
+}
+
+#answer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+#answer>div {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+#yes {
+    background-color: greenyellow;
+}
+
+#no {
+    background-color: fuchsia;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
