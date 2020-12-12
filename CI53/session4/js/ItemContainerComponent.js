@@ -61,10 +61,15 @@ $template.innerHTML = /*html*/ `
 `;
 
 export default class ItemContainer extends HTMLElement {
-    constructor() {
+    constructor(image, price, description, address) {
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild($template.content.cloneNode(true));
+
+        this.setAttribute('image', image);
+        this.setAttribute('price', price);
+        this.setAttribute('description', description);
+        this.setAttribute('address', address);
     }
 
     //định nghĩa những thuộc tính có ảnh hưởng đến nội dung
