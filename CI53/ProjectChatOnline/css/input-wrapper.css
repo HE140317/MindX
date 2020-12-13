@@ -1,0 +1,28 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18;
+}
+
+#input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto;
+}
+
+#input-label {
+    color: #b3abab;
+}
+
+#input-main {
+    height: 40px;
+    box-sizing: border-box;
+    padding: auto 10px;
+    border: 1px solid #4b4646;
+    border-radius: 5px;
+    outline: nones;
+}
+
+#input-error {
+    font-size: 14px;
+    color: rgb(228, 8, 8);
+}
