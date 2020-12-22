@@ -5,11 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCqI8ftH2PPcjXGDpuaII3UNg_ch-GuEWo",
+            authDomain: "ci53-ba5d2.firebaseapp.com",
+            projectId: "ci53-ba5d2",
+            storageBucket: "ci53-ba5d2.appspot.com",
+            messagingSenderId: "500349448007",
+            appId: "1:500349448007:web:9177c0fbff4b2b45932662",
+            measurementId: "G-KYKGT9FMTC"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+
+    <script src="//unpkg.com/navigo@6"></script>
 </head>
 
 <body style="background-color: rgb(107, 138, 230);">
-    <register-form></register-form>
-
+    <div id="app">
+        <friend-list data='[
+            {"name": "Nguyen van a"},
+            {"name": "nguyen van b"},
+            {"name": "nv c"}
+        ]'></friend-list>
+    </div>
 
     <script src="./js/app.js" type="module"></script>
 </body>

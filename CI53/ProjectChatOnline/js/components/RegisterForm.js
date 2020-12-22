@@ -1,3 +1,6 @@
+import InputWrapper from "./InputWrapper.js";
+import { validateEmail } from "../utils.js";
+
 const $template = document.createElement('template');
 $template.innerHTML = /*html*/ `
     <link rel="stylesheet" href="../../css/register-form.css">
@@ -10,7 +13,7 @@ $template.innerHTML = /*html*/ `
         <button id="register-btn">Register</button>
 
         <div id="to-login">
-             U already have account?  <b><a href="#">Log in</a></b>
+             U already have account?  <b><a href="#!/sign-in">Log in</a></b>
         </div>
     </form>
 `;
@@ -28,10 +31,43 @@ export default class RegisterForm extends HTMLElement {
     }
 
     connectedCallback() {
-        this.$form.onsubmit = (event) => {
+        this.$form.onsubmit = async(event) => {
             event.preventDefault();
+            let email = this.$email.value();
+            let name = this.$name.value();
+            let password = this.$password.value();
+            let passwordconfirmation = this.$passwordconfirmation.value();
+            let isPassed =
 
-            console.log(this.$email.value());
+                (InputWrapper.validate(this.$email, (value) => value != '', "Nhap vao email") &&
+                    InputWrapper.validate(this.$email, (value) => validateEmail(value), "Email ko hop le")) &
+                InputWrapper.validate(this.$name, (value) => value != '', "Nhap vao name") &
+
+                InputWrapper.validate(this.$password, (value) => value != '', "Nhap vao password") &
+
+                (InputWrapper.validate(this.$passwordconfirmation, (value) => value != '', "Nhap vao passwordconfirmation") &&
+                    InputWrapper.validate(this.$passwordconfirmation, (value) => value == password, "Pass incorrect"));
+
+
+            if (isPassed) {
+                let result = await firebase.firestore().collection('users')
+                    .where('email', '==', email).get();
+                console.log(result);
+
+                if (result.empty) {
+                    firebase.firestore().collection('users').add({
+                        name: name,
+                        email: email,
+                        password: CryptoJS.MD5(password).toString()
+                    });
+                } else {
+                    alert('Duplicate email');
+                }
+            }
+
+
+
+            // console.log(this.$email.value());
         }
     }
 }
